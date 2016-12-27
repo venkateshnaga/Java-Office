@@ -17,7 +17,7 @@ public class MyConnection
 		{
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/dhatridb","root","root");
+			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/venkatesh","root","root");
 			
 		}
 		

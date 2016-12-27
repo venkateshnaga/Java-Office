@@ -25,7 +25,7 @@ public class Dboperations
 		
 		
 		//String query="insert into emp(empname,empsal,empexp,emploc,emploan,empemi) values(?,?,?,?,?,?)";
-		String query="insert into empdb values(?,?,?,?,?,?,?)";
+		String query="insert into empdb1 values(?,?,?,?,?,?,?)";
 		
 		try 
 		{
@@ -57,7 +57,7 @@ public class Dboperations
 	
 		try{
 			
-			pst = con.prepareStatement("update empdb set empname=?,empsal=?,emploc=?,empexp=? where empid=?");
+			pst = con.prepareStatement("update empdb1 set empname=?,empsal=?,emploc=?,empexp=? where empid=?");
 				  
 				
 				pst.setString(1,emp.getEmpname());  
@@ -87,7 +87,7 @@ public class Dboperations
 		
 		try
 		{
-			pst=con.prepareStatement("delete from empdb where empid=? ");
+			pst=con.prepareStatement("delete from empdb1 where empid=? ");
 			pst.setString(1,emp.getEmpid());
 			result=pst.executeUpdate();
 		}
@@ -102,7 +102,7 @@ public class Dboperations
 	{
 		ArrayList<EmployeeBean> employeeList=new ArrayList<EmployeeBean>();
 		
-		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb where empid=?";
+		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb1 where empid=?";
 		
 		try {
 			pst=con.prepareStatement(query);
@@ -137,7 +137,7 @@ public class Dboperations
 	{
 		ArrayList<EmployeeBean> employeeList=new ArrayList<EmployeeBean>();
 		
-		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb where empid=?";
+		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb1 where empid=?";
 		
 		try {
 			pst=con.prepareStatement(query);
@@ -172,7 +172,7 @@ public class Dboperations
 	{
 		ArrayList<EmployeeBean> employeeList=new ArrayList<EmployeeBean>();
 		
-		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb where empsal=?";
+		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb1 where empsal=?";
 		
 		try {
 			pst=con.prepareStatement(query);
@@ -208,7 +208,7 @@ public class Dboperations
 	{
 		ArrayList<EmployeeBean> employeeList=new ArrayList<EmployeeBean>();
 		
-		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb where empname=?";
+		String query="select empid,empname,empsal,empexp,emploc,emploan,empemi from empdb1 where empname=?";
 		
 		try {
 			pst=con.prepareStatement(query);
@@ -247,7 +247,7 @@ public class Dboperations
 		ArrayList<EmployeeBean> al=new ArrayList<EmployeeBean>();
 		EmployeeBean db=null;		
 		
-		String query="select * from empdb where empid=?";
+		String query="select * from empdb1 where empid=?";
 		try 
 		{
 			pst=con.prepareStatement(query);
@@ -319,7 +319,7 @@ public class Dboperations
 		try 
 		{
 			
-			String query1="update empdb set emploan=?,empemi=? where empid=?";
+			String query1="update empdb1 set emploan=?,empemi=? where empid=?";
 			pst=con.prepareStatement(query1);
 			pst.setDouble(1, ee.getEmploan());
 			pst.setDouble(2, ee.getEmpemi());
